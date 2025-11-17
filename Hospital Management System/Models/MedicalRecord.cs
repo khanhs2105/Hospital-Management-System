@@ -5,6 +5,11 @@ namespace Hospital_Management_System.Models;
 
 public partial class MedicalRecord
 {
+    public MedicalRecord()
+    {
+        PrescriptionDetails = new List<PrescriptionDetail>();
+    }
+
     public int RecordId { get; set; }
 
     public int AppointmentId { get; set; }
@@ -17,5 +22,5 @@ public partial class MedicalRecord
 
     public virtual Appointment Appointment { get; set; } = null!;
 
-    public virtual ICollection<PrescriptionDetail> PrescriptionDetails { get; set; } = new List<PrescriptionDetail>();
+    public virtual ICollection<PrescriptionDetail> PrescriptionDetails { get; set; }
 }
